@@ -1,0 +1,49 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: login.spec.ts >> Login with the registered account
+- Location: tests\login.spec.ts:12:5
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.fill: Target page, context or browser has been closed
+```
+
+# Test source
+
+```ts
+  1  | import { Page, expect } from "@playwright/test";
+  2  | import { BasePage } from "../pages/BasePage";
+  3  | 
+  4  | export class loginPage extends BasePage {
+  5  | 
+  6  |     constructor(page: Page) {
+  7  |         super(page);
+  8  |     }
+  9  |     private emailInput = this.page.locator('input[data-qa="login-email"]');
+  10 |     private passwordInput = this.page.locator('input[data-qa="login-password"]')
+  11 |     private loginButton = this.page.locator('button[data-qa="login-button"]');
+  12 | 
+  13 |     async loginToAccount(email: string, password: string) {
+> 14 |         await this.emailInput.fill(email);
+     |                               ^ Error: locator.fill: Target page, context or browser has been closed
+  15 |         await this.passwordInput.fill(password);
+  16 |         await this.loginButton.click();
+  17 |     }
+  18 | 
+  19 |     async logoutFromAccount() {
+  20 |         await this.page.locator('a[href="/logout"]').click();
+  21 |         await expect(this.page.locator('a[href="/login"]')).toBeVisible();
+  22 |     }
+  23 | }
+```

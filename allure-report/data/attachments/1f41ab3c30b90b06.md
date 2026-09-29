@@ -1,0 +1,972 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: register.spec.ts >> Register a new account
+- Location: tests\register.spec.ts:6:5
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: page.goto: Test timeout of 30000ms exceeded.
+Call log:
+  - navigating to "https://automationexercise.com/", waiting until "load"
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e5]:
+      - link [ref=e8] [cursor=pointer]:
+        - /url: /
+        - img "Website for automation practice" [ref=e9]
+      - list [ref=e12]:
+        - listitem [ref=e13]:
+          - link " Home" [ref=e14] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e15]: 
+            - text: Home
+        - listitem [ref=e16]:
+          - link " Products" [ref=e17] [cursor=pointer]:
+            - /url: /products
+            - generic [ref=e18]: 
+            - text: Products
+        - listitem [ref=e19]:
+          - link " Cart" [ref=e20] [cursor=pointer]:
+            - /url: /view_cart
+            - generic [ref=e21]: 
+            - text: Cart
+        - listitem [ref=e22]:
+          - link " Signup / Login" [ref=e23] [cursor=pointer]:
+            - /url: /login
+            - generic [ref=e24]: 
+            - text: Signup / Login
+        - listitem [ref=e25]:
+          - link " Test Cases" [ref=e26] [cursor=pointer]:
+            - /url: /test_cases
+            - generic [ref=e27]: 
+            - text: Test Cases
+        - listitem [ref=e28]:
+          - link " API Testing" [ref=e29] [cursor=pointer]:
+            - /url: /api_list
+            - generic [ref=e30]: 
+            - text: API Testing
+        - listitem [ref=e31]:
+          - link " Video Tutorials" [ref=e32] [cursor=pointer]:
+            - /url: https://www.youtube.com/c/AutomationExercise
+            - generic [ref=e33]: 
+            - text: Video Tutorials
+        - listitem [ref=e34]:
+          - link " Contact us" [ref=e35] [cursor=pointer]:
+            - /url: /contact_us
+            - generic [ref=e36]: 
+            - text: Contact us
+  - generic [ref=e41]:
+    - list [ref=e42]:
+      - listitem [ref=e43] [cursor=pointer]
+      - listitem [ref=e44] [cursor=pointer]
+      - listitem [ref=e45] [cursor=pointer]
+    - generic [ref=e46]:
+      - generic:
+        - generic [ref=e47]:
+          - heading "AutomationExercise" [level=1] [ref=e48]
+          - heading "Full-Fledged practice website for Automation Engineers" [level=2] [ref=e49]
+          - paragraph [ref=e50]:
+            - text: All QA engineers can use this website for automation practice and API testing either they are at beginner or advance level. This is for everybody to help them brush up their automation skills.
+            - link "Upgrade Industrial Robotics" [ref=e51] [cursor=pointer]
+          - link [ref=e55] [cursor=pointer]:
+            - /url: /test_cases
+            - button "Test Cases" [ref=e56]
+          - link [ref=e57] [cursor=pointer]:
+            - /url: /api_list
+            - button "APIs list for practice" [ref=e58]
+        - img "demo website for practice" [ref=e60]
+    - link "" [ref=e61] [cursor=pointer]:
+      - /url: "#slider-carousel"
+    - link "" [ref=e63] [cursor=pointer]:
+      - /url: "#slider-carousel"
+  - generic [ref=e67]:
+    - generic [ref=e69]:
+      - heading "Category" [level=2] [ref=e70]
+      - generic [ref=e71]:
+        - heading [level=4] [ref=e74]:
+          - link " Women" [ref=e75] [cursor=pointer]:
+            - /url: "#Women"
+            - generic [ref=e76]: 
+            - text: Women
+        - heading [level=4] [ref=e80]:
+          - link " Men" [ref=e81] [cursor=pointer]:
+            - /url: "#Men"
+            - generic [ref=e82]: 
+            - text: Men
+        - generic [ref=e85]:
+          - insertion [ref=e87]:
+            - generic [ref=e90]:
+              - heading "These are topics related to the article that might interest you" [level=2] [ref=e92]: Discover more
+              - link "Software testing tutorials" [ref=e93] [cursor=pointer]
+              - link "Automation video courses" [ref=e98] [cursor=pointer]
+              - link "Software testing certifications" [ref=e103] [cursor=pointer]
+              - link "Automation exercise challenges" [ref=e108] [cursor=pointer]
+              - link "Test case templates" [ref=e113] [cursor=pointer]
+              - link "Automation testing tools" [ref=e118] [cursor=pointer]
+              - link "T-Shirts" [ref=e123] [cursor=pointer]
+              - link "API testing tools" [ref=e128] [cursor=pointer]
+          - heading [level=4] [ref=e133]:
+            - link " Kids" [ref=e134] [cursor=pointer]:
+              - /url: "#Kids"
+              - generic [ref=e135]: 
+              - text: Kids
+      - generic [ref=e137]:
+        - heading "Brands" [level=2] [ref=e138]
+        - list [ref=e140]:
+          - listitem [ref=e141]:
+            - link "(6) Polo" [ref=e142] [cursor=pointer]:
+              - /url: /brand_products/Polo
+              - generic [ref=e143]: (6)
+              - text: Polo
+          - listitem [ref=e144]:
+            - link "(5) H&M" [ref=e145] [cursor=pointer]:
+              - /url: /brand_products/H&M
+              - generic [ref=e146]: (5)
+              - text: H&M
+          - listitem [ref=e147]:
+            - link "(5) Madame" [ref=e148] [cursor=pointer]:
+              - /url: /brand_products/Madame
+              - generic [ref=e149]: (5)
+              - text: Madame
+          - listitem [ref=e150]:
+            - link "(3) Mast & Harbour" [ref=e151] [cursor=pointer]:
+              - /url: /brand_products/Mast & Harbour
+              - generic [ref=e152]: (3)
+              - text: Mast & Harbour
+          - listitem [ref=e153]:
+            - link "(4) Babyhug" [ref=e154] [cursor=pointer]:
+              - /url: /brand_products/Babyhug
+              - generic [ref=e155]: (4)
+              - text: Babyhug
+          - listitem [ref=e156]:
+            - link "(3) Allen Solly Junior" [ref=e157] [cursor=pointer]:
+              - /url: /brand_products/Allen Solly Junior
+              - generic [ref=e158]: (3)
+              - text: Allen Solly Junior
+          - listitem [ref=e159]:
+            - link "(3) Kookie Kids" [ref=e160] [cursor=pointer]:
+              - /url: /brand_products/Kookie Kids
+              - generic [ref=e161]: (3)
+              - text: Kookie Kids
+          - listitem [ref=e162]:
+            - link "(5) Biba" [ref=e163] [cursor=pointer]:
+              - /url: /brand_products/Biba
+              - generic [ref=e164]: (5)
+              - text: Biba
+    - generic [ref=e165]:
+      - generic [ref=e166]:
+        - heading "Features Items" [level=2] [ref=e167]
+        - generic [ref=e169]:
+          - generic [ref=e170]:
+            - generic [ref=e171]:
+              - img "ecommerce website products" [ref=e172]
+              - heading "Rs. 500" [level=2] [ref=e173]
+              - paragraph [ref=e174]: Blue Top
+              - generic [ref=e175] [cursor=pointer]:
+                - generic [ref=e176]: 
+                - text: Add to cart
+            - generic [ref=e177]:
+              - heading "Rs. 500" [level=2] [ref=e178]
+              - paragraph [ref=e179]: Blue Top
+              - generic [ref=e180] [cursor=pointer]:
+                - generic [ref=e181]: 
+                - text: Add to cart
+          - list [ref=e183]:
+            - listitem [ref=e184]:
+              - link " View Product" [ref=e185] [cursor=pointer]:
+                - /url: /product_details/1
+                - generic [ref=e186]: 
+                - text: View Product
+        - generic [ref=e188]:
+          - generic [ref=e189]:
+            - generic [ref=e190]:
+              - img "ecommerce website products" [ref=e191]
+              - heading "Rs. 400" [level=2] [ref=e192]
+              - paragraph [ref=e193]:
+                - text: Men
+                - link "Tshirt" [ref=e194] [cursor=pointer]:
+                  - /url: "#"
+              - generic [ref=e197] [cursor=pointer]:
+                - generic [ref=e198]: 
+                - text: Add to cart
+            - generic [ref=e199]:
+              - heading "Rs. 400" [level=2] [ref=e200]
+              - paragraph [ref=e201]: Men Tshirt
+              - generic [ref=e202] [cursor=pointer]:
+                - generic [ref=e203]: 
+                - text: Add to cart
+          - list [ref=e205]:
+            - listitem [ref=e206]:
+              - link " View Product" [ref=e207] [cursor=pointer]:
+                - /url: /product_details/2
+                - generic [ref=e208]: 
+                - text: View Product
+        - generic [ref=e210]:
+          - generic [ref=e211]:
+            - generic [ref=e212]:
+              - img "ecommerce website products" [ref=e213]
+              - heading "Rs. 1000" [level=2] [ref=e214]
+              - paragraph [ref=e215]:
+                - text: Sleeveless
+                - link "Dress" [ref=e216] [cursor=pointer]:
+                  - /url: "#"
+              - generic [ref=e219] [cursor=pointer]:
+                - generic [ref=e220]: 
+                - text: Add to cart
+            - generic [ref=e221]:
+              - heading "Rs. 1000" [level=2] [ref=e222]
+              - paragraph [ref=e223]: Sleeveless Dress
+              - generic [ref=e224] [cursor=pointer]:
+                - generic [ref=e225]: 
+                - text: Add to cart
+          - list [ref=e227]:
+            - listitem [ref=e228]:
+              - link " View Product" [ref=e229] [cursor=pointer]:
+                - /url: /product_details/3
+                - generic [ref=e230]: 
+                - text: View Product
+        - generic [ref=e232]:
+          - generic [ref=e233]:
+            - generic [ref=e234]:
+              - img "ecommerce website products" [ref=e235]
+              - heading "Rs. 1500" [level=2] [ref=e236]
+              - paragraph [ref=e237]: Stylish Dress
+              - generic [ref=e238] [cursor=pointer]:
+                - generic [ref=e239]: 
+                - text: Add to cart
+            - generic [ref=e240]:
+              - heading "Rs. 1500" [level=2] [ref=e241]
+              - paragraph [ref=e242]: Stylish Dress
+              - generic [ref=e243] [cursor=pointer]:
+                - generic [ref=e244]: 
+                - text: Add to cart
+          - list [ref=e246]:
+            - listitem [ref=e247]:
+              - link " View Product" [ref=e248] [cursor=pointer]:
+                - /url: /product_details/4
+                - generic [ref=e249]: 
+                - text: View Product
+        - generic [ref=e251]:
+          - generic [ref=e252]:
+            - generic [ref=e253]:
+              - img "ecommerce website products" [ref=e254]
+              - heading "Rs. 600" [level=2] [ref=e255]
+              - paragraph [ref=e256]: Winter Top
+              - generic [ref=e257] [cursor=pointer]:
+                - generic [ref=e258]: 
+                - text: Add to cart
+            - generic [ref=e259]:
+              - heading "Rs. 600" [level=2] [ref=e260]
+              - paragraph [ref=e261]: Winter Top
+              - generic [ref=e262] [cursor=pointer]:
+                - generic [ref=e263]: 
+                - text: Add to cart
+          - list [ref=e265]:
+            - listitem [ref=e266]:
+              - link " View Product" [ref=e267] [cursor=pointer]:
+                - /url: /product_details/5
+                - generic [ref=e268]: 
+                - text: View Product
+        - generic [ref=e270]:
+          - generic [ref=e271]:
+            - generic [ref=e272]:
+              - img "ecommerce website products" [ref=e273]
+              - heading "Rs. 400" [level=2] [ref=e274]
+              - paragraph [ref=e275]: Summer White Top
+              - generic [ref=e276] [cursor=pointer]:
+                - generic [ref=e277]: 
+                - text: Add to cart
+            - generic [ref=e278]:
+              - heading "Rs. 400" [level=2] [ref=e279]
+              - paragraph [ref=e280]: Summer White Top
+              - generic [ref=e281] [cursor=pointer]:
+                - generic [ref=e282]: 
+                - text: Add to cart
+          - list [ref=e284]:
+            - listitem [ref=e285]:
+              - link " View Product" [ref=e286] [cursor=pointer]:
+                - /url: /product_details/6
+                - generic [ref=e287]: 
+                - text: View Product
+        - generic [ref=e289]:
+          - generic [ref=e290]:
+            - generic [ref=e291]:
+              - img "ecommerce website products" [ref=e292]
+              - heading "Rs. 1000" [level=2] [ref=e293]
+              - paragraph [ref=e294]: Madame Top For Women
+              - generic [ref=e295] [cursor=pointer]:
+                - generic [ref=e296]: 
+                - text: Add to cart
+            - generic [ref=e297]:
+              - heading "Rs. 1000" [level=2] [ref=e298]
+              - paragraph [ref=e299]: Madame Top For Women
+              - generic [ref=e300] [cursor=pointer]:
+                - generic [ref=e301]: 
+                - text: Add to cart
+          - list [ref=e303]:
+            - listitem [ref=e304]:
+              - link " View Product" [ref=e305] [cursor=pointer]:
+                - /url: /product_details/7
+                - generic [ref=e306]: 
+                - text: View Product
+        - generic [ref=e308]:
+          - generic [ref=e309]:
+            - generic [ref=e310]:
+              - img "ecommerce website products" [ref=e311]
+              - heading "Rs. 700" [level=2] [ref=e312]
+              - paragraph [ref=e313]: Fancy Green Top
+              - generic [ref=e314] [cursor=pointer]:
+                - generic [ref=e315]: 
+                - text: Add to cart
+            - generic [ref=e316]:
+              - heading "Rs. 700" [level=2] [ref=e317]
+              - paragraph [ref=e318]: Fancy Green Top
+              - generic [ref=e319] [cursor=pointer]:
+                - generic [ref=e320]: 
+                - text: Add to cart
+          - list [ref=e322]:
+            - listitem [ref=e323]:
+              - link " View Product" [ref=e324] [cursor=pointer]:
+                - /url: /product_details/8
+                - generic [ref=e325]: 
+                - text: View Product
+        - generic [ref=e327]:
+          - generic [ref=e328]:
+            - generic [ref=e329]:
+              - img "ecommerce website products" [ref=e330]
+              - heading "Rs. 499" [level=2] [ref=e331]
+              - paragraph [ref=e332]:
+                - text: Sleeves Printed Top - White
+                - link "Switch Broadband Providers" [ref=e333] [cursor=pointer]
+              - generic [ref=e337] [cursor=pointer]:
+                - generic [ref=e338]: 
+                - text: Add to cart
+            - generic [ref=e339]:
+              - heading "Rs. 499" [level=2] [ref=e340]
+              - paragraph [ref=e341]: Sleeves Printed Top - White
+              - generic [ref=e342] [cursor=pointer]:
+                - generic [ref=e343]: 
+                - text: Add to cart
+          - list [ref=e345]:
+            - listitem [ref=e346]:
+              - link " View Product" [ref=e347] [cursor=pointer]:
+                - /url: /product_details/11
+                - generic [ref=e348]: 
+                - text: View Product
+        - generic [ref=e350]:
+          - generic [ref=e351]:
+            - generic [ref=e352]:
+              - img "ecommerce website products" [ref=e353]
+              - heading "Rs. 359" [level=2] [ref=e354]
+              - paragraph [ref=e355]: Half Sleeves Top Schiffli Detailing - Pink
+              - generic [ref=e356] [cursor=pointer]:
+                - generic [ref=e357]: 
+                - text: Add to cart
+            - generic [ref=e358]:
+              - heading "Rs. 359" [level=2] [ref=e359]
+              - paragraph [ref=e360]: Half Sleeves Top Schiffli Detailing - Pink
+              - generic [ref=e361] [cursor=pointer]:
+                - generic [ref=e362]: 
+                - text: Add to cart
+          - list [ref=e364]:
+            - listitem [ref=e365]:
+              - link " View Product" [ref=e366] [cursor=pointer]:
+                - /url: /product_details/12
+                - generic [ref=e367]: 
+                - text: View Product
+        - generic [ref=e369]:
+          - generic [ref=e370]:
+            - generic [ref=e371]:
+              - img "ecommerce website products" [ref=e372]
+              - heading "Rs. 278" [level=2] [ref=e373]
+              - paragraph [ref=e374]: Frozen Tops For Kids
+              - generic [ref=e375] [cursor=pointer]:
+                - generic [ref=e376]: 
+                - text: Add to cart
+            - generic [ref=e377]:
+              - heading "Rs. 278" [level=2] [ref=e378]
+              - paragraph [ref=e379]: Frozen Tops For Kids
+              - generic [ref=e380] [cursor=pointer]:
+                - generic [ref=e381]: 
+                - text: Add to cart
+          - list [ref=e383]:
+            - listitem [ref=e384]:
+              - link " View Product" [ref=e385] [cursor=pointer]:
+                - /url: /product_details/13
+                - generic [ref=e386]: 
+                - text: View Product
+        - generic [ref=e388]:
+          - generic [ref=e389]:
+            - generic [ref=e390]:
+              - img "ecommerce website products" [ref=e391]
+              - heading "Rs. 679" [level=2] [ref=e392]
+              - paragraph [ref=e393]:
+                - text: Full Sleeves Top Cherry - Pink
+                - link "Get Quality Software" [ref=e394] [cursor=pointer]
+              - generic [ref=e398] [cursor=pointer]:
+                - generic [ref=e399]: 
+                - text: Add to cart
+            - generic [ref=e400]:
+              - heading "Rs. 679" [level=2] [ref=e401]
+              - paragraph [ref=e402]: Full Sleeves Top Cherry - Pink
+              - generic [ref=e403] [cursor=pointer]:
+                - generic [ref=e404]: 
+                - text: Add to cart
+          - list [ref=e406]:
+            - listitem [ref=e407]:
+              - link " View Product" [ref=e408] [cursor=pointer]:
+                - /url: /product_details/14
+                - generic [ref=e409]: 
+                - text: View Product
+        - generic [ref=e411]:
+          - generic [ref=e412]:
+            - generic [ref=e413]:
+              - img "ecommerce website products" [ref=e414]
+              - heading "Rs. 315" [level=2] [ref=e415]
+              - paragraph [ref=e416]: Printed Off Shoulder Top - White
+              - generic [ref=e417] [cursor=pointer]:
+                - generic [ref=e418]: 
+                - text: Add to cart
+            - generic [ref=e419]:
+              - heading "Rs. 315" [level=2] [ref=e420]
+              - paragraph [ref=e421]: Printed Off Shoulder Top - White
+              - generic [ref=e422] [cursor=pointer]:
+                - generic [ref=e423]: 
+                - text: Add to cart
+          - list [ref=e425]:
+            - listitem [ref=e426]:
+              - link " View Product" [ref=e427] [cursor=pointer]:
+                - /url: /product_details/15
+                - generic [ref=e428]: 
+                - text: View Product
+        - generic [ref=e430]:
+          - generic [ref=e431]:
+            - generic [ref=e432]:
+              - img "ecommerce website products" [ref=e433]
+              - heading "Rs. 478" [level=2] [ref=e434]
+              - paragraph [ref=e435]: Sleeves Top and Short - Blue & Pink
+              - generic [ref=e436] [cursor=pointer]:
+                - generic [ref=e437]: 
+                - text: Add to cart
+            - generic [ref=e438]:
+              - heading "Rs. 478" [level=2] [ref=e439]
+              - paragraph [ref=e440]: Sleeves Top and Short - Blue & Pink
+              - generic [ref=e441] [cursor=pointer]:
+                - generic [ref=e442]: 
+                - text: Add to cart
+          - list [ref=e444]:
+            - listitem [ref=e445]:
+              - link " View Product" [ref=e446] [cursor=pointer]:
+                - /url: /product_details/16
+                - generic [ref=e447]: 
+                - text: View Product
+        - generic [ref=e449]:
+          - generic [ref=e450]:
+            - generic [ref=e451]:
+              - img "ecommerce website products" [ref=e452]
+              - heading "Rs. 1200" [level=2] [ref=e453]
+              - paragraph [ref=e454]: Little Girls Mr. Panda Shirt
+              - generic [ref=e455] [cursor=pointer]:
+                - generic [ref=e456]: 
+                - text: Add to cart
+            - generic [ref=e457]:
+              - heading "Rs. 1200" [level=2] [ref=e458]
+              - paragraph [ref=e459]: Little Girls Mr. Panda Shirt
+              - generic [ref=e460] [cursor=pointer]:
+                - generic [ref=e461]: 
+                - text: Add to cart
+          - list [ref=e463]:
+            - listitem [ref=e464]:
+              - link " View Product" [ref=e465] [cursor=pointer]:
+                - /url: /product_details/18
+                - generic [ref=e466]: 
+                - text: View Product
+        - generic [ref=e468]:
+          - generic [ref=e469]:
+            - generic [ref=e470]:
+              - img "ecommerce website products" [ref=e471]
+              - heading "Rs. 1050" [level=2] [ref=e472]
+              - paragraph [ref=e473]: Sleeveless Unicorn Patch Gown - Pink
+              - generic [ref=e474] [cursor=pointer]:
+                - generic [ref=e475]: 
+                - text: Add to cart
+            - generic [ref=e476]:
+              - heading "Rs. 1050" [level=2] [ref=e477]
+              - paragraph [ref=e478]: Sleeveless Unicorn Patch Gown - Pink
+              - generic [ref=e479] [cursor=pointer]:
+                - generic [ref=e480]: 
+                - text: Add to cart
+          - list [ref=e482]:
+            - listitem [ref=e483]:
+              - link " View Product" [ref=e484] [cursor=pointer]:
+                - /url: /product_details/19
+                - generic [ref=e485]: 
+                - text: View Product
+        - generic [ref=e487]:
+          - generic [ref=e488]:
+            - generic [ref=e489]:
+              - img "ecommerce website products" [ref=e490]
+              - heading "Rs. 1190" [level=2] [ref=e491]
+              - paragraph [ref=e492]: Cotton Mull Embroidered Dress
+              - generic [ref=e493] [cursor=pointer]:
+                - generic [ref=e494]: 
+                - text: Add to cart
+            - generic [ref=e495]:
+              - heading "Rs. 1190" [level=2] [ref=e496]
+              - paragraph [ref=e497]: Cotton Mull Embroidered Dress
+              - generic [ref=e498] [cursor=pointer]:
+                - generic [ref=e499]: 
+                - text: Add to cart
+          - list [ref=e501]:
+            - listitem [ref=e502]:
+              - link " View Product" [ref=e503] [cursor=pointer]:
+                - /url: /product_details/20
+                - generic [ref=e504]: 
+                - text: View Product
+        - generic [ref=e506]:
+          - generic [ref=e507]:
+            - generic [ref=e508]:
+              - img "ecommerce website products" [ref=e509]
+              - heading "Rs. 1530" [level=2] [ref=e510]
+              - paragraph [ref=e511]: Blue Cotton Indie Mickey Dress
+              - generic [ref=e512] [cursor=pointer]:
+                - generic [ref=e513]: 
+                - text: Add to cart
+            - generic [ref=e514]:
+              - heading "Rs. 1530" [level=2] [ref=e515]
+              - paragraph [ref=e516]: Blue Cotton Indie Mickey Dress
+              - generic [ref=e517] [cursor=pointer]:
+                - generic [ref=e518]: 
+                - text: Add to cart
+          - list [ref=e520]:
+            - listitem [ref=e521]:
+              - link " View Product" [ref=e522] [cursor=pointer]:
+                - /url: /product_details/21
+                - generic [ref=e523]: 
+                - text: View Product
+        - generic [ref=e525]:
+          - generic [ref=e526]:
+            - generic [ref=e527]:
+              - img "ecommerce website products" [ref=e528]
+              - heading "Rs. 1600" [level=2] [ref=e529]
+              - paragraph [ref=e530]:
+                - text: Long Maxi Tulle Fancy Dress Up Outfits -Pink
+                - link "Download Productivity Apps" [ref=e531] [cursor=pointer]
+              - generic [ref=e535] [cursor=pointer]:
+                - generic [ref=e536]: 
+                - text: Add to cart
+            - generic [ref=e537]:
+              - heading "Rs. 1600" [level=2] [ref=e538]
+              - paragraph [ref=e539]: Long Maxi Tulle Fancy Dress Up Outfits -Pink
+              - generic [ref=e540] [cursor=pointer]:
+                - generic [ref=e541]: 
+                - text: Add to cart
+          - list [ref=e543]:
+            - listitem [ref=e544]:
+              - link " View Product" [ref=e545] [cursor=pointer]:
+                - /url: /product_details/22
+                - generic [ref=e546]: 
+                - text: View Product
+        - generic [ref=e548]:
+          - generic [ref=e549]:
+            - generic [ref=e550]:
+              - img "ecommerce website products" [ref=e551]
+              - heading "Rs. 1100" [level=2] [ref=e552]
+              - paragraph [ref=e553]: Sleeveless Unicorn Print Fit & Flare Net Dress - Multi
+              - generic [ref=e554] [cursor=pointer]:
+                - generic [ref=e555]: 
+                - text: Add to cart
+            - generic [ref=e556]:
+              - heading "Rs. 1100" [level=2] [ref=e557]
+              - paragraph [ref=e558]: Sleeveless Unicorn Print Fit & Flare Net Dress - Multi
+              - generic [ref=e559] [cursor=pointer]:
+                - generic [ref=e560]: 
+                - text: Add to cart
+          - list [ref=e562]:
+            - listitem [ref=e563]:
+              - link " View Product" [ref=e564] [cursor=pointer]:
+                - /url: /product_details/23
+                - generic [ref=e565]: 
+                - text: View Product
+        - generic [ref=e567]:
+          - generic [ref=e568]:
+            - generic [ref=e569]:
+              - img "ecommerce website products" [ref=e570]
+              - heading "Rs. 849" [level=2] [ref=e571]
+              - paragraph [ref=e572]:
+                - text: Colour Blocked Shirt – Sky Blue
+                - link "Design Custom Shirts" [ref=e573] [cursor=pointer]
+              - generic [ref=e577] [cursor=pointer]:
+                - generic [ref=e578]: 
+                - text: Add to cart
+            - generic [ref=e579]:
+              - heading "Rs. 849" [level=2] [ref=e580]
+              - paragraph [ref=e581]: Colour Blocked Shirt – Sky Blue
+              - generic [ref=e582] [cursor=pointer]:
+                - generic [ref=e583]: 
+                - text: Add to cart
+          - list [ref=e585]:
+            - listitem [ref=e586]:
+              - link " View Product" [ref=e587] [cursor=pointer]:
+                - /url: /product_details/24
+                - generic [ref=e588]: 
+                - text: View Product
+        - generic [ref=e590]:
+          - generic [ref=e591]:
+            - generic [ref=e592]:
+              - img "ecommerce website products" [ref=e593]
+              - heading "Rs. 1299" [level=2] [ref=e594]
+              - paragraph [ref=e595]:
+                - text: Pure Cotton V-Neck
+                - link "T-Shirt" [ref=e596] [cursor=pointer]:
+                  - /url: "#"
+              - generic [ref=e599] [cursor=pointer]:
+                - generic [ref=e600]: 
+                - text: Add to cart
+            - generic [ref=e601]:
+              - heading "Rs. 1299" [level=2] [ref=e602]
+              - paragraph [ref=e603]: Pure Cotton V-Neck T-Shirt
+              - generic [ref=e604] [cursor=pointer]:
+                - generic [ref=e605]: 
+                - text: Add to cart
+          - list [ref=e607]:
+            - listitem [ref=e608]:
+              - link " View Product" [ref=e609] [cursor=pointer]:
+                - /url: /product_details/28
+                - generic [ref=e610]: 
+                - text: View Product
+        - generic [ref=e612]:
+          - generic [ref=e613]:
+            - generic [ref=e614]:
+              - img "ecommerce website products" [ref=e615]
+              - heading "Rs. 1000" [level=2] [ref=e616]
+              - paragraph [ref=e617]: Green Side Placket Detail T-Shirt
+              - generic [ref=e618] [cursor=pointer]:
+                - generic [ref=e619]: 
+                - text: Add to cart
+            - generic [ref=e620]:
+              - heading "Rs. 1000" [level=2] [ref=e621]
+              - paragraph [ref=e622]: Green Side Placket Detail T-Shirt
+              - generic [ref=e623] [cursor=pointer]:
+                - generic [ref=e624]: 
+                - text: Add to cart
+          - list [ref=e626]:
+            - listitem [ref=e627]:
+              - link " View Product" [ref=e628] [cursor=pointer]:
+                - /url: /product_details/29
+                - generic [ref=e629]: 
+                - text: View Product
+        - generic [ref=e631]:
+          - generic [ref=e632]:
+            - generic [ref=e633]:
+              - img "ecommerce website products" [ref=e634]
+              - heading "Rs. 1500" [level=2] [ref=e635]
+              - paragraph [ref=e636]: Premium Polo T-Shirts
+              - generic [ref=e637] [cursor=pointer]:
+                - generic [ref=e638]: 
+                - text: Add to cart
+            - generic [ref=e639]:
+              - heading "Rs. 1500" [level=2] [ref=e640]
+              - paragraph [ref=e641]: Premium Polo T-Shirts
+              - generic [ref=e642] [cursor=pointer]:
+                - generic [ref=e643]: 
+                - text: Add to cart
+          - list [ref=e645]:
+            - listitem [ref=e646]:
+              - link " View Product" [ref=e647] [cursor=pointer]:
+                - /url: /product_details/30
+                - generic [ref=e648]: 
+                - text: View Product
+        - generic [ref=e650]:
+          - generic [ref=e651]:
+            - generic [ref=e652]:
+              - img "ecommerce website products" [ref=e653]
+              - heading "Rs. 850" [level=2] [ref=e654]
+              - paragraph [ref=e655]: Pure Cotton Neon Green Tshirt
+              - generic [ref=e656] [cursor=pointer]:
+                - generic [ref=e657]: 
+                - text: Add to cart
+            - generic [ref=e658]:
+              - heading "Rs. 850" [level=2] [ref=e659]
+              - paragraph [ref=e660]: Pure Cotton Neon Green Tshirt
+              - generic [ref=e661] [cursor=pointer]:
+                - generic [ref=e662]: 
+                - text: Add to cart
+          - list [ref=e664]:
+            - listitem [ref=e665]:
+              - link " View Product" [ref=e666] [cursor=pointer]:
+                - /url: /product_details/31
+                - generic [ref=e667]: 
+                - text: View Product
+        - generic [ref=e669]:
+          - generic [ref=e670]:
+            - generic [ref=e671]:
+              - img "ecommerce website products" [ref=e672]
+              - heading "Rs. 799" [level=2] [ref=e673]
+              - paragraph [ref=e674]: Soft Stretch Jeans
+              - generic [ref=e675] [cursor=pointer]:
+                - generic [ref=e676]: 
+                - text: Add to cart
+            - generic [ref=e677]:
+              - heading "Rs. 799" [level=2] [ref=e678]
+              - paragraph [ref=e679]: Soft Stretch Jeans
+              - generic [ref=e680] [cursor=pointer]:
+                - generic [ref=e681]: 
+                - text: Add to cart
+          - list [ref=e683]:
+            - listitem [ref=e684]:
+              - link " View Product" [ref=e685] [cursor=pointer]:
+                - /url: /product_details/33
+                - generic [ref=e686]: 
+                - text: View Product
+        - generic [ref=e688]:
+          - generic [ref=e689]:
+            - generic [ref=e690]:
+              - img "ecommerce website products" [ref=e691]
+              - heading "Rs. 1200" [level=2] [ref=e692]
+              - paragraph [ref=e693]: Regular Fit Straight Jeans
+              - generic [ref=e694] [cursor=pointer]:
+                - generic [ref=e695]: 
+                - text: Add to cart
+            - generic [ref=e696]:
+              - heading "Rs. 1200" [level=2] [ref=e697]
+              - paragraph [ref=e698]: Regular Fit Straight Jeans
+              - generic [ref=e699] [cursor=pointer]:
+                - generic [ref=e700]: 
+                - text: Add to cart
+          - list [ref=e702]:
+            - listitem [ref=e703]:
+              - link " View Product" [ref=e704] [cursor=pointer]:
+                - /url: /product_details/35
+                - generic [ref=e705]: 
+                - text: View Product
+        - generic [ref=e707]:
+          - generic [ref=e708]:
+            - generic [ref=e709]:
+              - img "ecommerce website products" [ref=e710]
+              - heading "Rs. 1400" [level=2] [ref=e711]
+              - paragraph [ref=e712]: Grunt Blue Slim Fit Jeans
+              - generic [ref=e713] [cursor=pointer]:
+                - generic [ref=e714]: 
+                - text: Add to cart
+            - generic [ref=e715]:
+              - heading "Rs. 1400" [level=2] [ref=e716]
+              - paragraph [ref=e717]: Grunt Blue Slim Fit Jeans
+              - generic [ref=e718] [cursor=pointer]:
+                - generic [ref=e719]: 
+                - text: Add to cart
+          - list [ref=e721]:
+            - listitem [ref=e722]:
+              - link " View Product" [ref=e723] [cursor=pointer]:
+                - /url: /product_details/37
+                - generic [ref=e724]: 
+                - text: View Product
+        - generic [ref=e726]:
+          - generic [ref=e727]:
+            - generic [ref=e728]:
+              - img "ecommerce website products" [ref=e729]
+              - heading "Rs. 2300" [level=2] [ref=e730]
+              - paragraph [ref=e731]: Rose Pink Embroidered Maxi Dress
+              - generic [ref=e732] [cursor=pointer]:
+                - generic [ref=e733]: 
+                - text: Add to cart
+            - generic [ref=e734]:
+              - heading "Rs. 2300" [level=2] [ref=e735]
+              - paragraph [ref=e736]: Rose Pink Embroidered Maxi Dress
+              - generic [ref=e737] [cursor=pointer]:
+                - generic [ref=e738]: 
+                - text: Add to cart
+          - list [ref=e740]:
+            - listitem [ref=e741]:
+              - link " View Product" [ref=e742] [cursor=pointer]:
+                - /url: /product_details/38
+                - generic [ref=e743]: 
+                - text: View Product
+        - generic [ref=e745]:
+          - generic [ref=e746]:
+            - generic [ref=e747]:
+              - img "ecommerce website products" [ref=e748]
+              - heading "Rs. 3000" [level=2] [ref=e749]
+              - paragraph [ref=e750]: Cotton Silk Hand Block Print Saree
+              - generic [ref=e751] [cursor=pointer]:
+                - generic [ref=e752]: 
+                - text: Add to cart
+            - generic [ref=e753]:
+              - heading "Rs. 3000" [level=2] [ref=e754]
+              - paragraph [ref=e755]: Cotton Silk Hand Block Print Saree
+              - generic [ref=e756] [cursor=pointer]:
+                - generic [ref=e757]: 
+                - text: Add to cart
+          - list [ref=e759]:
+            - listitem [ref=e760]:
+              - link " View Product" [ref=e761] [cursor=pointer]:
+                - /url: /product_details/39
+                - generic [ref=e762]: 
+                - text: View Product
+        - generic [ref=e764]:
+          - generic [ref=e765]:
+            - generic [ref=e766]:
+              - img "ecommerce website products"
+              - heading "Rs. 3500" [level=2] [ref=e767]
+              - paragraph [ref=e768]: Rust Red Linen Saree
+              - generic [ref=e769] [cursor=pointer]:
+                - generic [ref=e770]: 
+                - text: Add to cart
+            - generic [ref=e771]:
+              - heading "Rs. 3500" [level=2] [ref=e772]
+              - paragraph [ref=e773]: Rust Red Linen Saree
+              - generic [ref=e774] [cursor=pointer]:
+                - generic [ref=e775]: 
+                - text: Add to cart
+          - list [ref=e777]:
+            - listitem [ref=e778]:
+              - link " View Product" [ref=e779] [cursor=pointer]:
+                - /url: /product_details/40
+                - generic [ref=e780]: 
+                - text: View Product
+        - generic [ref=e782]:
+          - generic [ref=e783]:
+            - generic [ref=e784]:
+              - img "ecommerce website products" [ref=e785]
+              - heading "Rs. 5000" [level=2] [ref=e786]
+              - paragraph [ref=e787]: Beautiful Peacock Blue Cotton Linen Saree
+              - generic [ref=e788] [cursor=pointer]:
+                - generic [ref=e789]: 
+                - text: Add to cart
+            - generic [ref=e790]:
+              - heading "Rs. 5000" [level=2] [ref=e791]
+              - paragraph [ref=e792]: Beautiful Peacock Blue Cotton Linen Saree
+              - generic [ref=e793] [cursor=pointer]:
+                - generic [ref=e794]: 
+                - text: Add to cart
+          - list [ref=e796]:
+            - listitem [ref=e797]:
+              - link " View Product" [ref=e798] [cursor=pointer]:
+                - /url: /product_details/41
+                - generic [ref=e799]: 
+                - text: View Product
+        - generic [ref=e801]:
+          - generic [ref=e802]:
+            - generic [ref=e803]:
+              - img "ecommerce website products" [ref=e804]
+              - heading "Rs. 1400" [level=2] [ref=e805]
+              - paragraph [ref=e806]: Lace Top For Women
+              - generic [ref=e807] [cursor=pointer]:
+                - generic [ref=e808]: 
+                - text: Add to cart
+            - generic [ref=e809]:
+              - heading "Rs. 1400" [level=2] [ref=e810]
+              - paragraph [ref=e811]: Lace Top For Women
+              - generic [ref=e812] [cursor=pointer]:
+                - generic [ref=e813]: 
+                - text: Add to cart
+          - list [ref=e815]:
+            - listitem [ref=e816]:
+              - link " View Product" [ref=e817] [cursor=pointer]:
+                - /url: /product_details/42
+                - generic [ref=e818]: 
+                - text: View Product
+        - generic [ref=e820]:
+          - generic [ref=e821]:
+            - generic [ref=e822]:
+              - img "ecommerce website products" [ref=e823]
+              - heading "Rs. 1389" [level=2] [ref=e824]
+              - paragraph [ref=e825]:
+                - text: GRAPHIC DESIGN MEN T SHIRT - BLUE
+                - link "Browse Designer Clothes" [ref=e826] [cursor=pointer]
+              - generic [ref=e830] [cursor=pointer]:
+                - generic [ref=e831]: 
+                - text: Add to cart
+            - generic [ref=e832]:
+              - heading "Rs. 1389" [level=2] [ref=e833]
+              - paragraph [ref=e834]: GRAPHIC DESIGN MEN T SHIRT - BLUE
+              - generic [ref=e835] [cursor=pointer]:
+                - generic [ref=e836]: 
+                - text: Add to cart
+          - list [ref=e838]:
+            - listitem [ref=e839]:
+              - link " View Product" [ref=e840] [cursor=pointer]:
+                - /url: /product_details/43
+                - generic [ref=e841]: 
+                - text: View Product
+      - generic [ref=e842]:
+        - heading "recommended items" [level=2] [ref=e843]
+        - generic [ref=e844]:
+          - generic [ref=e845]:
+            - text:   
+            - generic:
+              - generic [ref=e849]:
+                - img "ecommerce website products" [ref=e850]
+                - heading "Rs. 1500" [level=2] [ref=e851]
+                - paragraph [ref=e852]: Stylish Dress
+                - generic [ref=e853] [cursor=pointer]:
+                  - generic [ref=e854]: 
+                  - text: Add to cart
+              - generic [ref=e858]:
+                - img "ecommerce website products" [ref=e859]
+                - heading "Rs. 600" [level=2] [ref=e860]
+                - paragraph [ref=e861]: Winter Top
+                - generic [ref=e862] [cursor=pointer]:
+                  - generic [ref=e863]: 
+                  - text: Add to cart
+              - generic [ref=e867]:
+                - img "ecommerce website products" [ref=e868]
+                - heading "Rs. 400" [level=2] [ref=e869]
+                - paragraph [ref=e870]: Summer White Top
+                - generic [ref=e871] [cursor=pointer]:
+                  - generic [ref=e872]: 
+                  - text: Add to cart
+          - link "" [ref=e873] [cursor=pointer]:
+            - /url: "#recommended-item-carousel"
+          - link "" [ref=e875] [cursor=pointer]:
+            - /url: "#recommended-item-carousel"
+  - contentinfo [ref=e877]:
+    - insertion [ref=e879]
+    - generic [ref=e885]:
+      - heading "Subscription" [level=2] [ref=e886]
+      - generic [ref=e887]:
+        - textbox "Your email address" [ref=e888]
+        - button "" [ref=e889] [cursor=pointer]
+        - paragraph [ref=e891]: Get the most recent updates from our site and be updated your self...
+    - paragraph [ref=e895]: Copyright © 2021 All rights reserved
+  - text: 
+  - insertion [ref=e897]
+```
+
+# Test source
+
+```ts
+  1  | import { Page, expect } from "@playwright/test";
+  2  | import configData from "../config/configData.json";
+  3  | export class BasePage {
+  4  |   protected page: Page;
+  5  |   constructor(page: Page) {
+  6  |     this.page = page;
+  7  |   }
+  8  |   async navigateTo() {
+> 9  |     await this.page.goto(configData.baseURL);
+     |                     ^ Error: page.goto: Test timeout of 30000ms exceeded.
+  10 |   }
+  11 |   async getPageTitle() {
+  12 |     return this.page.title();
+  13 |   }
+  14 | }
+  15 | 
+```

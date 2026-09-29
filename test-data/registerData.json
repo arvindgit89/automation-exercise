@@ -1,0 +1,13 @@
+{
+    "name": "Arvind",
+    "email": "arvind@gmail.com",
+    "password": "admin@123",
+    "firstName": "Arvind",
+    "lastName": "Sharma",
+    "address": "123 Test Street",
+    "country": "United States",
+    "state": "California",
+    "city": "Los Angeles",
+    "zipcode": "90001",
+    "mobileNumber": "5551234567"
+}
