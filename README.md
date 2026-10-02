@@ -568,7 +568,7 @@ To execute all configured browser projects:
 ```bash
 npm run test:all
 ```
-![!\[img_1.png\](img_1.png)](docs/screenshots/execution_all.png)
+![alt text](docs/screenshots/execution_all.png)
 
 ---
 
