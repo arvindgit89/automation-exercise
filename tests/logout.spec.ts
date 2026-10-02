@@ -1,26 +1,23 @@
-import { test, expect } from "@playwright/test";
-import { readFile } from "fs/promises";
-import path from "path";
-import { loginPage } from "../pages/LoginPage";
+import { test } from "../fixtures/test.fixture";
 import registerData from "../test-data/registerData.json";
+import { getGeneratedUser } from "../utils/userData";
 
-type GeneratedUser = {
-    email: string;
-    password: string;
-};
+test(
+  "Logout from the registered account @smoke",
+  async ({ loginPage }) => {
+    const generatedUser = await getGeneratedUser();
 
-test("Logout from the registered account @smoke", async ({ page }) => {
-    const generatedUserPath = path.resolve(process.cwd(), "test-data", "generatedUser.json");
-    const generatedUser = JSON.parse(await readFile(generatedUserPath, "utf8")) as GeneratedUser;
-    const loginpage = new loginPage(page);
-    const loggedInAs = page.getByText(`Logged in as ${registerData.name}`);
+    await loginPage.navigateTo();
+    await loginPage.navigateToLogin();
 
-    await loginpage.navigateTo();
-    await page.locator('a[href="/login"]').click();
-    await loginpage.loginToAccount(generatedUser.email, generatedUser.password);
-    await expect(loggedInAs).toBeVisible();
+    await loginPage.loginToAccount(
+      generatedUser.email,
+      generatedUser.password
+    );
 
-    await loginpage.logoutFromAccount();
-    await expect(page.locator('a[href="/login"]')).toBeVisible();
-    await expect(loggedInAs).toHaveCount(0);
-});
+    await loginPage.verifyLoggedInAs(registerData.name);
+
+    await loginPage.logoutFromAccount();
+    await loginPage.verifyLoggedOut();
+  }
+);

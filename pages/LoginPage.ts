@@ -1,23 +1,41 @@
-import { Page, expect } from "@playwright/test";
-import { BasePage } from "../pages/BasePage";
+import { expect, Locator, Page } from "@playwright/test";
+import { BasePage } from "./BasePage";
 
-export class loginPage extends BasePage {
+export class LoginPage extends BasePage {
+  private readonly emailInput: Locator;
+  private readonly passwordInput: Locator;
+  private readonly loginButton: Locator;
+  private readonly logoutLink: Locator;
 
-    constructor(page: Page) {
-        super(page);
-    }
-    private emailInput = this.page.locator('input[data-qa="login-email"]');
-    private passwordInput = this.page.locator('input[data-qa="login-password"]')
-    private loginButton = this.page.locator('button[data-qa="login-button"]');
+  constructor(page: Page) {
+    super(page);
 
-    async loginToAccount(email: string, password: string) {
-        await this.emailInput.fill(email);
-        await this.passwordInput.fill(password);
-        await this.loginButton.click();
-    }
+    this.emailInput = page.locator('[data-qa="login-email"]');
+    this.passwordInput = page.locator('[data-qa="login-password"]');
+    this.loginButton = page.locator('[data-qa="login-button"]');
+    this.logoutLink = page.locator('a[href="/logout"]');
+  }
 
-    async logoutFromAccount() {
-        await this.page.locator('a[href="/logout"]').click();
-        await expect(this.page.locator('a[href="/login"]')).toBeVisible();
-    }
+  async loginToAccount(
+    email: string,
+    password: string
+  ): Promise<void> {
+    await this.emailInput.fill(email);
+    await this.passwordInput.fill(password);
+    await this.loginButton.click();
+  }
+
+  async verifyLoggedInAs(name: string): Promise<void> {
+    await expect(
+      this.page.getByText(`Logged in as ${name}`)
+    ).toBeVisible();
+  }
+
+  async logoutFromAccount(): Promise<void> {
+    await this.logoutLink.click();
+  }
+
+  async verifyLoggedOut(): Promise<void> {
+    await expect(this.loginLink).toBeVisible();
+  }
 }

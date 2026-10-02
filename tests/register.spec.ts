@@ -1,23 +1,24 @@
-import { test, expect } from "@playwright/test";
-import { writeFile } from "fs/promises";
-import path from "path";
-import { signupPage } from "../pages/RegisterPage";
+import { test } from "../fixtures/test.fixture";
 import registerData from "../test-data/registerData.json";
+import { saveGeneratedUser } from "../utils/userData";
 
-test("Register a new account ", async ({ page }) => {
-    const email = `arvind${Date.now()}${Math.random().toString(36).slice(2)}@gmail.com`;
-    const signuppage = new signupPage(page);
+test("Register a new account", async ({ registerPage }) => {
+  const email =
+    `arvind${Date.now()}${Math.random().toString(36).slice(2)}@gmail.com`;
 
-    await signuppage.navigateTo();
-    await page.locator('a[href="/login"]').click();
-    await signuppage.newUserRegistration(email);
-    await signuppage.completeRegistration();
-    await expect(page.locator('[data-qa="account-created"]')).toContainText(/Account Created!/i);
+  await registerPage.navigateTo();
+  await registerPage.navigateToLogin();
 
-    const generatedUser = {
-        email,
-        password: registerData.password,
-    };
-    const generatedUserPath = path.resolve(process.cwd(), "test-data", "generatedUser.json");
-    await writeFile(generatedUserPath, JSON.stringify(generatedUser, null, 2), "utf8");
+  await registerPage.startRegistration(
+    registerData.name,
+    email
+  );
+
+  await registerPage.completeRegistration(registerData);
+  await registerPage.verifyAccountCreated();
+
+  await saveGeneratedUser({
+    email,
+    password: registerData.password,
+  });
 });

@@ -3,6 +3,7 @@ import { envConfig } from "./config/environment";
 
 export default defineConfig({
   testDir: './tests',
+  timeout: 60 * 1000,
 
   fullyParallel: true,
 
@@ -13,14 +14,14 @@ export default defineConfig({
   workers:4,
 
   reporter: [
-    ['html'],
-    ['allure-playwright']
+    ["html", { open: "never" }],
+    ["allure-playwright", { outputFolder: "allure-results" }],
   ],
 
   use: {
-     trace: 'on',
-     headless: false,
-     baseURL: envConfig.baseURL,
+    screenshot: "only-on-failure",
+    video: "retain-on-failure",
+    trace: "retain-on-failure",
   },
 
   projects: [
